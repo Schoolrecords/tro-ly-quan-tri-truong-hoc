@@ -4,120 +4,157 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trợ lý Quản trị trường học</title>
-<meta name="description" content="Tải bộ cài Trợ lý Quản trị trường học - trợ lý AI soạn văn bản đúng thể thức cho Hiệu trưởng, Phó Hiệu trưởng trường Mầm non, Tiểu học, THCS.">
+<meta name="description" content="Trợ lý AI soạn văn bản đúng thể thức cho Hiệu trưởng, Phó Hiệu trưởng trường Mầm non, Tiểu học, THCS - tải bộ cài đặt.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B2B6B'/%3E%3Cpath d='M14 20c8-3 14-2 18 2 4-4 10-5 18-2v26c-8-3-14-2-18 2-4-4-10-5-18-2z' fill='%23fff'/%3E%3Cpath d='M32 22v26' stroke='%232F6FE0' stroke-width='3'/%3E%3C/svg%3E">
 <style>
   :root{
-    --nen:#F4F7FC; --the:#FFFFFF; --chu:#16243D; --phu:#5A6B85; --vien:#DCE4F0;
-    --dam:#0B2B6B; --xanh:#2F6FE0; --xanh-dam:#1F57C3; --nhat:#EAF1FD; --vang:#FFF6E0; --vang-vien:#F1D48A; --do:#B42318;
+    --nen:#F4F7FC; --nen2:#FFFFFF; --the:#FFFFFF; --chu:#16243D; --phu:#5A6B85; --vien:#DCE4F0;
+    --dam:#0B2B6B; --xanh:#2F6FE0; --xanh-dam:#1F57C3; --nhat:#EAF1FD; --la:#6BB33A; --la-nhat:#EDF7E6;
+    --vang:#FFF6E0; --vang-vien:#F1D48A; --bong:0 18px 44px rgba(11,43,107,.16);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --nen:#0E1522; --the:#162033; --chu:#E6ECF5; --phu:#9FB0C8; --vien:#26334A;
-      --dam:#9CC0FF; --xanh:#4C8BFF; --xanh-dam:#6A9DFF; --nhat:#1B2A45; --vang:#2D2616; --vang-vien:#6B5A2A; --do:#FF8A80;
+      --nen:#0E1522; --nen2:#121B2B; --the:#162033; --chu:#E6ECF5; --phu:#9FB0C8; --vien:#26334A;
+      --dam:#9CC0FF; --xanh:#4C8BFF; --xanh-dam:#6A9DFF; --nhat:#1B2A45; --la:#7CC24A; --la-nhat:#1C2D1A;
+      --vang:#2D2616; --vang-vien:#6B5A2A; --bong:0 18px 44px rgba(0,0,0,.45);
     }
   }
   :root[data-theme="dark"]{
-    --nen:#0E1522; --the:#162033; --chu:#E6ECF5; --phu:#9FB0C8; --vien:#26334A;
-    --dam:#9CC0FF; --xanh:#4C8BFF; --xanh-dam:#6A9DFF; --nhat:#1B2A45; --vang:#2D2616; --vang-vien:#6B5A2A; --do:#FF8A80;
+    --nen:#0E1522; --nen2:#121B2B; --the:#162033; --chu:#E6ECF5; --phu:#9FB0C8; --vien:#26334A;
+    --dam:#9CC0FF; --xanh:#4C8BFF; --xanh-dam:#6A9DFF; --nhat:#1B2A45; --la:#7CC24A; --la-nhat:#1C2D1A;
+    --vang:#2D2616; --vang-vien:#6B5A2A; --bong:0 18px 44px rgba(0,0,0,.45);
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{margin:0;background:var(--nen);color:var(--chu);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
-  .khung{max-width:960px;margin:0 auto;padding-inline:20px}
-  header{background:linear-gradient(135deg,#0B2B6B,#1F4FB8);color:#fff}
-  header .khung{padding-block:44px 88px}
-  .logo{display:flex;align-items:center;gap:14px}
-  .logo svg{flex:none}
-  .logo b{display:block;font-size:26px;letter-spacing:.3px;line-height:1.2}
-  .logo span{opacity:.85;font-size:15px}
-  header h1{font-size:clamp(24px,4.4vw,36px);line-height:1.25;margin:34px 0 10px;max-width:720px}
-  header p{margin:0;opacity:.9;max-width:680px}
-  .tai{background:var(--the);border:1px solid var(--vien);border-radius:18px;padding:28px;margin-top:-60px;box-shadow:0 12px 34px rgba(11,43,107,.12);display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
-  .tai h2{margin:0 0 4px;font-size:21px;color:var(--dam)}
-  .tai .ttin{color:var(--phu);font-size:14.5px}
-  .nut{display:inline-flex;align-items:center;gap:10px;background:var(--xanh);color:#fff;text-decoration:none;font-weight:600;font-size:17px;padding:15px 28px;border-radius:12px;transition:background .15s}
-  .nut:hover{background:var(--xanh-dam)}
-  .nut:focus-visible{outline:3px solid var(--dam);outline-offset:3px}
-  .link-thang{margin-top:10px;font-size:13.5px;color:var(--phu);word-break:break-all}
-  .link-thang code{background:var(--nhat);padding:2px 6px;border-radius:6px}
-  section{margin-top:40px}
-  section h2{font-size:21px;color:var(--dam);margin:0 0 14px}
-  .luoi{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-  .o{background:var(--the);border:1px solid var(--vien);border-radius:14px;padding:18px}
-  .o b{display:block;color:var(--dam);margin-bottom:4px}
+  a{color:var(--xanh)}
+  .khung{max-width:1120px;margin:0 auto;padding-inline:20px}
+
+  /* Thanh trên cùng */
+  .thanh{background:#0B2B6B;color:#fff}
+  .thanh .khung{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+  .logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+  .logo b{display:block;font-size:17px;letter-spacing:.3px;line-height:1.2}
+  .logo span{font-size:12.5px;opacity:.8}
+  .menu{display:flex;gap:22px;font-size:15px}
+  .menu a{color:#fff;opacity:.85;text-decoration:none}
+  .menu a:hover{opacity:1}
+
+  /* Phần đầu */
+  .dau{background:linear-gradient(160deg,#0B2B6B 0%,#1B4FB6 62%,#2F6FE0 100%);color:#fff;overflow:hidden}
+  .dau .khung{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:44px;align-items:center;padding-block:56px 64px}
+  .nhan{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 14px;font-size:13.5px}
+  .dau h1{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:16px 0 14px}
+  .dau p.gt{margin:0 0 26px;font-size:17px;opacity:.92;max-width:520px}
+  .nut{display:inline-flex;align-items:center;gap:10px;background:var(--la);color:#fff;text-decoration:none;font-weight:600;font-size:18px;padding:16px 30px;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .15s,filter .15s}
+  .nut:hover{filter:brightness(.94);transform:translateY(-1px)}
+  .nut:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .ttin{margin-top:14px;font-size:14px;opacity:.85}
+  .anh{border-radius:14px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);background:#fff}
+  .anh .vien-tren{display:flex;gap:6px;padding:9px 12px;background:#E9EEF7}
+  .anh .vien-tren i{width:10px;height:10px;border-radius:50%;background:#C9D3E3}
+  .anh img{display:block;width:100%;height:auto}
+
+  /* Các mục */
+  section{padding-block:56px}
+  section.nhat-nen{background:var(--nen2);border-block:1px solid var(--vien)}
+  h2{font-size:clamp(22px,3vw,28px);color:var(--dam);margin:0 0 8px}
+  .mo-ta{color:var(--phu);margin:0 0 26px}
+  .luoi{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .o{background:var(--the);border:1px solid var(--vien);border-radius:16px;padding:20px}
+  .o .bt{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--nhat);color:var(--xanh);font-size:20px;margin-bottom:12px}
+  .o > b{display:block;color:var(--dam);margin-bottom:4px;font-size:16.5px}
   .o p{margin:0;color:var(--phu);font-size:15px}
-  ol.buoc{list-style:none;padding:0;margin:0;counter-reset:b}
-  ol.buoc>li{counter-increment:b;position:relative;background:var(--the);border:1px solid var(--vien);border-radius:14px;padding:16px 18px 16px 64px;margin-bottom:12px}
-  ol.buoc>li::before{content:counter(b);position:absolute;left:18px;top:15px;width:32px;height:32px;border-radius:50%;background:var(--nhat);color:var(--xanh);font-weight:700;display:grid;place-items:center}
-  ol.buoc b{color:var(--dam)}
-  .canh{background:var(--vang);border:1px solid var(--vang-vien);border-radius:12px;padding:12px 14px;margin-top:10px;font-size:15px}
-  kbd{font:inherit;font-size:14px;background:var(--nhat);border:1px solid var(--vien);border-bottom-width:2px;border-radius:6px;padding:1px 7px;white-space:nowrap}
-  ul.gon{margin:0;padding-left:20px}
-  ul.gon li{margin:4px 0}
-  .ghi{color:var(--phu);font-size:14.5px}
-  footer{margin-top:48px;border-top:1px solid var(--vien)}
-  footer .khung{padding-block:22px 34px;color:var(--phu);font-size:14.5px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
-  footer a,section a{color:var(--xanh)}
-  @media (max-width:560px){ .tai{padding:22px} .nut{width:100%;justify-content:center} ol.buoc>li{padding-left:58px} }
+  .buoc{counter-reset:b}
+  .buoc .o{position:relative;padding-top:52px}
+  .buoc .o::before{counter-increment:b;content:counter(b);position:absolute;left:20px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--la);color:#fff;font-weight:700;display:grid;place-items:center}
+  .canh{background:var(--vang);border:1px solid var(--vang-vien);border-radius:12px;padding:10px 12px;margin-top:10px;font-size:14.5px;color:var(--chu)}
+  kbd{font:inherit;font-size:13.5px;background:var(--nhat);border:1px solid var(--vien);border-bottom-width:2px;border-radius:6px;padding:0 6px;white-space:nowrap;color:var(--chu)}
+  details{background:var(--the);border:1px solid var(--vien);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600;color:var(--dam)}
+  details p{margin:10px 0 0;color:var(--phu)}
+  .yeu-cau{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .yeu-cau span{background:var(--la-nhat);border:1px solid var(--vien);border-radius:999px;padding:6px 14px;font-size:14px}
+  footer{border-top:1px solid var(--vien)}
+  footer .khung{padding-block:24px 36px;color:var(--phu);font-size:14.5px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+  @media (max-width:880px){
+    .dau .khung{grid-template-columns:1fr;padding-block:40px 48px}
+    .menu{display:none}
+  }
+  @media (max-width:520px){ .nut{width:100%;justify-content:center} section{padding-block:40px} }
 </style>
 </head>
 <body>
-<header>
+<div class="thanh">
   <div class="khung">
-    <div class="logo">
-      <svg width="52" height="52" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#fff"/><path d="M14 20c8-3 14-2 18 2 4-4 10-5 18-2v26c-8-3-14-2-18 2-4-4-10-5-18-2z" fill="#2F6FE0"/><path d="M32 22v26" stroke="#fff" stroke-width="3"/></svg>
-      <div><b>TRỢ LÝ QUẢN TRỊ TRƯỜNG HỌC</b><span>Soạn thảo nhanh – Đúng quy định – Hiệu quả mỗi ngày</span></div>
+    <a class="logo" href="#">
+      <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#fff"/><path d="M14 20c8-3 14-2 18 2 4-4 10-5 18-2v26c-8-3-14-2-18 2-4-4-10-5-18-2z" fill="#2F6FE0"/><path d="M32 22v26" stroke="#fff" stroke-width="3"/></svg>
+      <div><b>TRỢ LÝ QUẢN TRỊ TRƯỜNG HỌC</b><span>Đồng hành cùng nhà trường</span></div>
+    </a>
+    <nav class="menu"><a href="#cai-dat">Cài đặt</a><a href="#tinh-nang">Tính năng</a><a href="#hoi-dap">Hỏi đáp</a></nav>
+  </div>
+</div>
+
+<header class="dau">
+  <div class="khung">
+    <div>
+      <span class="nhan">Mầm non · Tiểu học · THCS</span>
+      <h1>Trợ lý AI cho Hiệu trưởng, Phó Hiệu trưởng</h1>
+      <p class="gt">Giao việc như nhắn tin: soạn công văn, kế hoạch, báo cáo đúng Nghị định 30/2020; văn bản của đảng ủy, chi bộ theo Hướng dẫn 05-HD/VPTW; tổng hợp số liệu, tra cứu quy định. Dữ liệu nằm trên máy của thầy cô.</p>
+      <a class="nut" id="nutTai" href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases/latest/download/TroLyHieuTruong-Setup.exe">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Tải bộ cài đặt
+      </a>
+      <div class="ttin" id="thongTin">Bản mới nhất · Windows 10/11 (64-bit)</div>
     </div>
-    <h1>Trợ lý AI cho Hiệu trưởng, Phó Hiệu trưởng trường Mầm non, Tiểu học, THCS</h1>
-    <p>Soạn công văn, kế hoạch, báo cáo đúng thể thức Nghị định 30/2020; văn bản của đảng ủy, chi bộ theo Hướng dẫn 05-HD/VPTW; tổng hợp số liệu, tra cứu quy định. Dữ liệu nằm trên máy của thầy cô.</p>
+    <div class="anh" aria-label="Giao diện phần mềm">
+      <div class="vien-tren"><i></i><i></i><i></i></div>
+      <img src="anh/giao-dien.png" alt="Trang Trò chuyện của Trợ lý Quản trị trường học: danh sách việc đã giao, câu trả lời của trợ lý, nút Việc mới" width="1500" height="900" loading="eager">
+    </div>
   </div>
 </header>
 
-<main class="khung">
-  <div class="tai">
-    <div>
-      <h2>Tải bộ cài đặt</h2>
-      <div class="ttin" id="thongTin">Bản mới nhất · Windows 10/11 (64-bit)</div>
-      <div class="link-thang">Link gửi cho đồng nghiệp: <code id="linkThang">https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases/latest/download/TroLyHieuTruong-Setup.exe</code></div>
-    </div>
-    <a class="nut" id="nutTai" href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases/latest/download/TroLyHieuTruong-Setup.exe">
-      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Tải về (TroLyHieuTruong-Setup.exe)
-    </a>
-  </div>
-
-  <section>
-    <h2>Cài đặt trong 4 bước</h2>
-    <ol class="buoc">
-      <li><b>Tải bộ cài</b> bằng nút ở trên. Trình duyệt có thể báo tệp "không thường được tải xuống": chọn <b>Giữ lại</b> (Chrome: bấm dấu ba chấm cạnh tệp → <b>Giữ lại</b>).</li>
-      <li><b>Mở tệp vừa tải.</b> Bộ cài chưa có chữ ký số của hãng nên Windows có thể hiện màn hình xanh <i>"Windows đã bảo vệ máy tính của bạn"</i>:
-        <div class="canh">Bấm <kbd>Thông tin bổ sung</kbd> (More info) → <kbd>Vẫn chạy</kbd> (Run anyway). Chỉ làm vậy với tệp tải từ trang này.</div></li>
-      <li><b>Chọn nơi lưu dữ liệu</b> (nên chọn ổ D hoặc E). Chương trình tự cài vào ổ C, không cần quyền quản trị. Bộ cài tự cài thêm các công cụ cần thiết, cần có Internet.</li>
-      <li><b>Mở phần mềm, kích hoạt:</b> bấm <kbd>Sao chép</kbd> cạnh <b>Mã máy</b>, gửi cho tác giả (Zalo hoặc email) kèm tên trường để nhận mã kích hoạt; khai báo thông tin trường một lần là dùng được.</li>
-    </ol>
-    <p class="ghi">Cần: máy Windows 10 (bản 1809 trở lên) hoặc Windows 11, 64-bit; Internet; tài khoản Claude (claude.ai) gói trả phí để trợ lý làm việc.</p>
-  </section>
-
-  <section>
-    <h2>Phần mềm làm được gì</h2>
-    <div class="luoi">
-      <div class="o"><b>Soạn văn bản đúng thể thức</b><p>Công văn, quyết định, kế hoạch, báo cáo, tờ trình, giấy mời, biên bản... theo Nghị định 30/2020, xuất Word ngay.</p></div>
-      <div class="o"><b>Công tác Đảng</b><p>Nghị quyết, chương trình, biên bản sinh hoạt chi bộ, kiểm điểm cuối năm theo thể thức văn bản của Đảng.</p></div>
-      <div class="o"><b>Căn cứ cập nhật</b><p>Chỉ trích dẫn văn bản còn hiệu lực; bối cảnh chính quyền 2 cấp tỉnh - xã/phường.</p></div>
-      <div class="o"><b>Tổng hợp, lịch, việc cần làm</b><p>Tổng hợp số liệu từ Excel, lịch công tác tuần, nhắc hạn xử lý văn bản đến.</p></div>
-      <div class="o"><b>Nhớ việc của trường</b><p>Bộ nhớ riêng trên máy: tên trường, nhân sự, số liệu, thói quen làm việc - càng dùng càng đúng ý.</p></div>
-      <div class="o"><b>Tự cập nhật an toàn</b><p>Tự kiểm tra bản mới mỗi ngày; chỉ cài bản có chữ ký số của tác giả, văn bản và bộ nhớ giữ nguyên.</p></div>
+<main>
+  <section id="cai-dat">
+    <div class="khung">
+      <h2>Cài đặt trong 4 bước</h2>
+      <p class="mo-ta">Không cần quyền quản trị máy. Bộ cài tự cài thêm các công cụ cần thiết (cần có Internet).</p>
+      <div class="luoi buoc">
+        <div class="o"><b>Tải bộ cài</b><p>Bấm "Tải bộ cài đặt". Nếu trình duyệt báo tệp "không thường được tải xuống", chọn <b>Giữ lại</b>.</p></div>
+        <div class="o"><b>Mở tệp vừa tải</b><p>Windows có thể hiện màn hình "Windows đã bảo vệ máy tính của bạn".</p><div class="canh">Bấm <kbd>Thông tin bổ sung</kbd> → <kbd>Vẫn chạy</kbd></div></div>
+        <div class="o"><b>Chọn nơi lưu dữ liệu</b><p>Nên chọn ổ D hoặc E. Chương trình tự cài vào ổ C; văn bản, bộ nhớ của trợ lý nằm ở ổ thầy cô chọn.</p></div>
+        <div class="o"><b>Kích hoạt, khai báo</b><p>Mở phần mềm, bấm <b>Sao chép</b> cạnh Mã máy, gửi tác giả kèm tên trường để nhận mã kích hoạt; khai báo thông tin trường một lần.</p></div>
+      </div>
+      <div class="yeu-cau"><span>Windows 10 (1809+) hoặc 11, 64-bit</span><span>Có Internet</span><span>Tài khoản Claude gói trả phí</span></div>
     </div>
   </section>
 
-  <section>
-    <h2>Cập nhật và cài lại</h2>
-    <ul class="gon">
-      <li>Máy đã cài: phần mềm tự hỏi khi có bản mới (hoặc vào <b>Cài đặt → Cập nhật phần mềm → Kiểm tra bản mới</b>).</li>
-      <li>Cài lại hoặc cài máy mới: tải bộ cài ở trang này rồi chạy - văn bản, bộ nhớ và mã kích hoạt trên máy đó giữ nguyên.</li>
-      <li id="dongSha" hidden>Mã kiểm tra SHA-256 của bản hiện tại: <code id="sha"></code></li>
-      <li>Các bản đã phát hành: <a href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases">danh sách phiên bản</a>.</li>
-    </ul>
+  <section id="tinh-nang" class="nhat-nen">
+    <div class="khung">
+      <h2>Phần mềm làm được gì</h2>
+      <p class="mo-ta">Trợ lý đọc bộ nhớ riêng của trường, làm một mạch đến khi có file Word, không hỏi lại.</p>
+      <div class="luoi">
+        <div class="o"><div class="bt">📄</div><b>Soạn văn bản đúng thể thức</b><p>Công văn, quyết định, kế hoạch, báo cáo, tờ trình, giấy mời, biên bản... theo Nghị định 30/2020; tên file Word có dấu, dễ tìm.</p></div>
+        <div class="o"><div class="bt">🚩</div><b>Công tác Đảng</b><p>Nghị quyết, chương trình, biên bản sinh hoạt chi bộ, kiểm điểm cuối năm theo thể thức văn bản của Đảng.</p></div>
+        <div class="o"><div class="bt">💬</div><b>Giao việc như nhắn tin</b><p>Giao 3 việc cùng lúc, gõ bổ sung khi trợ lý đang làm, xem lại 20 cuộc trò chuyện gần nhất, sao chép câu trả lời.</p></div>
+        <div class="o"><div class="bt">⚖️</div><b>Căn cứ còn hiệu lực</b><p>Chỉ trích dẫn văn bản đã đối chiếu; đúng bối cảnh chính quyền 2 cấp tỉnh - xã/phường.</p></div>
+        <div class="o"><div class="bt">📊</div><b>Tổng hợp, lịch, việc cần làm</b><p>Tổng hợp số liệu từ Excel, lập lịch công tác tuần, nhắc hạn xử lý văn bản đến.</p></div>
+        <div class="o"><div class="bt">🛡️</div><b>An toàn, tự cập nhật</b><p>Tự sao lưu mỗi ngày, tự lấy lại tệp lỡ xóa; chỉ cài bản cập nhật có chữ ký số của tác giả.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hoi-dap">
+    <div class="khung">
+      <h2>Hỏi đáp</h2>
+      <p class="mo-ta">Những điều thầy cô hay hỏi khi cài đặt, cập nhật.</p>
+      <details open><summary>Máy đã cài rồi thì cập nhật thế nào?</summary><p>Phần mềm tự kiểm tra bản mới mỗi ngày và hỏi "Cập nhật ngay?"; hoặc vào Cài đặt → Cập nhật phần mềm → Kiểm tra bản mới. Văn bản, bộ nhớ và mã kích hoạt được giữ nguyên.</p></details>
+      <details><summary>Tải về rất lâu không xong?</summary><p>Xem biểu tượng tải xuống ở góc trên trình duyệt: nếu có dòng cảnh báo, bấm ⋯ → Giữ lại. Mạng chậm thì nhờ đồng nghiệp đã tải chép tệp cài qua USB; máy đã cài chọn Cài đặt → Cập nhật từ file cài đặt.</p></details>
+      <details><summary>Cài lại Windows hoặc chuyển sang máy mới?</summary><p>Cài phần mềm ở máy mới, chép thư mục dữ liệu (hoặc giải nén bản sao lưu) sang, rồi gửi tác giả Mã máy mới để nhận mã kích hoạt.</p></details>
+      <details><summary>Dữ liệu của trường có bị đưa lên mạng không?</summary><p>Văn bản, bộ nhớ nằm trên máy thầy cô. Nội dung giao việc được gửi đến máy chủ của Anthropic để trợ lý xử lý - không đưa số căn cước, tài liệu mật vào trò chuyện.</p></details>
+      <p class="mo-ta" style="margin-top:18px">Các bản đã phát hành: <a href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases">danh sách phiên bản</a><span id="dongSha" hidden> · Mã kiểm tra SHA-256 bản hiện tại: <code id="sha" style="word-break:break-all"></code></span></p>
+    </div>
   </section>
 </main>
 
@@ -145,7 +182,7 @@
         document.getElementById('dongSha').hidden = false;
       }
     })
-    .catch(function () { /* giữ dòng mặc định, nút tải vẫn dùng link bản mới nhất */ });
+    .catch(function () { /* giữ dòng mặc định; nút tải vẫn dùng link bản mới nhất */ });
 })();
 </script>
 </body>
