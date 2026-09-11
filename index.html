@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trợ lý Quản trị trường học</title>
+<meta name="description" content="Tải bộ cài Trợ lý Quản trị trường học - trợ lý AI soạn văn bản đúng thể thức cho Hiệu trưởng, Phó Hiệu trưởng trường Mầm non, Tiểu học, THCS.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B2B6B'/%3E%3Cpath d='M14 20c8-3 14-2 18 2 4-4 10-5 18-2v26c-8-3-14-2-18 2-4-4-10-5-18-2z' fill='%23fff'/%3E%3Cpath d='M32 22v26' stroke='%232F6FE0' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --nen:#F4F7FC; --the:#FFFFFF; --chu:#16243D; --phu:#5A6B85; --vien:#DCE4F0;
+    --dam:#0B2B6B; --xanh:#2F6FE0; --xanh-dam:#1F57C3; --nhat:#EAF1FD; --vang:#FFF6E0; --vang-vien:#F1D48A; --do:#B42318;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --nen:#0E1522; --the:#162033; --chu:#E6ECF5; --phu:#9FB0C8; --vien:#26334A;
+      --dam:#9CC0FF; --xanh:#4C8BFF; --xanh-dam:#6A9DFF; --nhat:#1B2A45; --vang:#2D2616; --vang-vien:#6B5A2A; --do:#FF8A80;
+    }
+  }
+  :root[data-theme="dark"]{
+    --nen:#0E1522; --the:#162033; --chu:#E6ECF5; --phu:#9FB0C8; --vien:#26334A;
+    --dam:#9CC0FF; --xanh:#4C8BFF; --xanh-dam:#6A9DFF; --nhat:#1B2A45; --vang:#2D2616; --vang-vien:#6B5A2A; --do:#FF8A80;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--nen);color:var(--chu);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+  .khung{max-width:960px;margin:0 auto;padding-inline:20px}
+  header{background:linear-gradient(135deg,#0B2B6B,#1F4FB8);color:#fff}
+  header .khung{padding-block:44px 88px}
+  .logo{display:flex;align-items:center;gap:14px}
+  .logo svg{flex:none}
+  .logo b{display:block;font-size:26px;letter-spacing:.3px;line-height:1.2}
+  .logo span{opacity:.85;font-size:15px}
+  header h1{font-size:clamp(24px,4.4vw,36px);line-height:1.25;margin:34px 0 10px;max-width:720px}
+  header p{margin:0;opacity:.9;max-width:680px}
+  .tai{background:var(--the);border:1px solid var(--vien);border-radius:18px;padding:28px;margin-top:-60px;box-shadow:0 12px 34px rgba(11,43,107,.12);display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+  .tai h2{margin:0 0 4px;font-size:21px;color:var(--dam)}
+  .tai .ttin{color:var(--phu);font-size:14.5px}
+  .nut{display:inline-flex;align-items:center;gap:10px;background:var(--xanh);color:#fff;text-decoration:none;font-weight:600;font-size:17px;padding:15px 28px;border-radius:12px;transition:background .15s}
+  .nut:hover{background:var(--xanh-dam)}
+  .nut:focus-visible{outline:3px solid var(--dam);outline-offset:3px}
+  .link-thang{margin-top:10px;font-size:13.5px;color:var(--phu);word-break:break-all}
+  .link-thang code{background:var(--nhat);padding:2px 6px;border-radius:6px}
+  section{margin-top:40px}
+  section h2{font-size:21px;color:var(--dam);margin:0 0 14px}
+  .luoi{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .o{background:var(--the);border:1px solid var(--vien);border-radius:14px;padding:18px}
+  .o b{display:block;color:var(--dam);margin-bottom:4px}
+  .o p{margin:0;color:var(--phu);font-size:15px}
+  ol.buoc{list-style:none;padding:0;margin:0;counter-reset:b}
+  ol.buoc>li{counter-increment:b;position:relative;background:var(--the);border:1px solid var(--vien);border-radius:14px;padding:16px 18px 16px 64px;margin-bottom:12px}
+  ol.buoc>li::before{content:counter(b);position:absolute;left:18px;top:15px;width:32px;height:32px;border-radius:50%;background:var(--nhat);color:var(--xanh);font-weight:700;display:grid;place-items:center}
+  ol.buoc b{color:var(--dam)}
+  .canh{background:var(--vang);border:1px solid var(--vang-vien);border-radius:12px;padding:12px 14px;margin-top:10px;font-size:15px}
+  kbd{font:inherit;font-size:14px;background:var(--nhat);border:1px solid var(--vien);border-bottom-width:2px;border-radius:6px;padding:1px 7px;white-space:nowrap}
+  ul.gon{margin:0;padding-left:20px}
+  ul.gon li{margin:4px 0}
+  .ghi{color:var(--phu);font-size:14.5px}
+  footer{margin-top:48px;border-top:1px solid var(--vien)}
+  footer .khung{padding-block:22px 34px;color:var(--phu);font-size:14.5px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+  footer a,section a{color:var(--xanh)}
+  @media (max-width:560px){ .tai{padding:22px} .nut{width:100%;justify-content:center} ol.buoc>li{padding-left:58px} }
+</style>
+</head>
+<body>
+<header>
+  <div class="khung">
+    <div class="logo">
+      <svg width="52" height="52" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#fff"/><path d="M14 20c8-3 14-2 18 2 4-4 10-5 18-2v26c-8-3-14-2-18 2-4-4-10-5-18-2z" fill="#2F6FE0"/><path d="M32 22v26" stroke="#fff" stroke-width="3"/></svg>
+      <div><b>TRỢ LÝ QUẢN TRỊ TRƯỜNG HỌC</b><span>Soạn thảo nhanh – Đúng quy định – Hiệu quả mỗi ngày</span></div>
+    </div>
+    <h1>Trợ lý AI cho Hiệu trưởng, Phó Hiệu trưởng trường Mầm non, Tiểu học, THCS</h1>
+    <p>Soạn công văn, kế hoạch, báo cáo đúng thể thức Nghị định 30/2020; văn bản của đảng ủy, chi bộ theo Hướng dẫn 05-HD/VPTW; tổng hợp số liệu, tra cứu quy định. Dữ liệu nằm trên máy của thầy cô.</p>
+  </div>
+</header>
+
+<main class="khung">
+  <div class="tai">
+    <div>
+      <h2>Tải bộ cài đặt</h2>
+      <div class="ttin" id="thongTin">Bản mới nhất · Windows 10/11 (64-bit)</div>
+      <div class="link-thang">Link gửi cho đồng nghiệp: <code id="linkThang">https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases/latest/download/TroLyHieuTruong-Setup.exe</code></div>
+    </div>
+    <a class="nut" id="nutTai" href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases/latest/download/TroLyHieuTruong-Setup.exe">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Tải về (TroLyHieuTruong-Setup.exe)
+    </a>
+  </div>
+
+  <section>
+    <h2>Cài đặt trong 4 bước</h2>
+    <ol class="buoc">
+      <li><b>Tải bộ cài</b> bằng nút ở trên. Trình duyệt có thể báo tệp "không thường được tải xuống": chọn <b>Giữ lại</b> (Chrome: bấm dấu ba chấm cạnh tệp → <b>Giữ lại</b>).</li>
+      <li><b>Mở tệp vừa tải.</b> Bộ cài chưa có chữ ký số của hãng nên Windows có thể hiện màn hình xanh <i>"Windows đã bảo vệ máy tính của bạn"</i>:
+        <div class="canh">Bấm <kbd>Thông tin bổ sung</kbd> (More info) → <kbd>Vẫn chạy</kbd> (Run anyway). Chỉ làm vậy với tệp tải từ trang này.</div></li>
+      <li><b>Chọn nơi lưu dữ liệu</b> (nên chọn ổ D hoặc E). Chương trình tự cài vào ổ C, không cần quyền quản trị. Bộ cài tự cài thêm các công cụ cần thiết, cần có Internet.</li>
+      <li><b>Mở phần mềm, kích hoạt:</b> bấm <kbd>Sao chép</kbd> cạnh <b>Mã máy</b>, gửi cho tác giả (Zalo hoặc email) kèm tên trường để nhận mã kích hoạt; khai báo thông tin trường một lần là dùng được.</li>
+    </ol>
+    <p class="ghi">Cần: máy Windows 10 (bản 1809 trở lên) hoặc Windows 11, 64-bit; Internet; tài khoản Claude (claude.ai) gói trả phí để trợ lý làm việc.</p>
+  </section>
+
+  <section>
+    <h2>Phần mềm làm được gì</h2>
+    <div class="luoi">
+      <div class="o"><b>Soạn văn bản đúng thể thức</b><p>Công văn, quyết định, kế hoạch, báo cáo, tờ trình, giấy mời, biên bản... theo Nghị định 30/2020, xuất Word ngay.</p></div>
+      <div class="o"><b>Công tác Đảng</b><p>Nghị quyết, chương trình, biên bản sinh hoạt chi bộ, kiểm điểm cuối năm theo thể thức văn bản của Đảng.</p></div>
+      <div class="o"><b>Căn cứ cập nhật</b><p>Chỉ trích dẫn văn bản còn hiệu lực; bối cảnh chính quyền 2 cấp tỉnh - xã/phường.</p></div>
+      <div class="o"><b>Tổng hợp, lịch, việc cần làm</b><p>Tổng hợp số liệu từ Excel, lịch công tác tuần, nhắc hạn xử lý văn bản đến.</p></div>
+      <div class="o"><b>Nhớ việc của trường</b><p>Bộ nhớ riêng trên máy: tên trường, nhân sự, số liệu, thói quen làm việc - càng dùng càng đúng ý.</p></div>
+      <div class="o"><b>Tự cập nhật an toàn</b><p>Tự kiểm tra bản mới mỗi ngày; chỉ cài bản có chữ ký số của tác giả, văn bản và bộ nhớ giữ nguyên.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cập nhật và cài lại</h2>
+    <ul class="gon">
+      <li>Máy đã cài: phần mềm tự hỏi khi có bản mới (hoặc vào <b>Cài đặt → Cập nhật phần mềm → Kiểm tra bản mới</b>).</li>
+      <li>Cài lại hoặc cài máy mới: tải bộ cài ở trang này rồi chạy - văn bản, bộ nhớ và mã kích hoạt trên máy đó giữ nguyên.</li>
+      <li id="dongSha" hidden>Mã kiểm tra SHA-256 của bản hiện tại: <code id="sha"></code></li>
+      <li>Các bản đã phát hành: <a href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases">danh sách phiên bản</a>.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="khung">
+    <span>© 2026 Trần Thanh Chung · Trợ lý Quản trị trường học</span>
+    <span>Hỗ trợ, cấp mã kích hoạt: <a href="mailto:chungtrt@gmail.com">chungtrt@gmail.com</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var API = 'https://api.github.com/repos/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases/latest';
+  function ngay(s) { var d = new Date(s); return ('0' + d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(); }
+  fetch(API, { headers: { 'Accept': 'application/vnd.github+json' } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (rel) {
+      var a = (rel.assets || []).filter(function (x) { return x.name === 'TroLyHieuTruong-Setup.exe'; })[0];
+      var ver = String(rel.tag_name || '').replace(/^v/, '');
+      var t = 'Phiên bản ' + ver + ' · phát hành ' + ngay(rel.published_at);
+      if (a) t += ' · ' + (a.size / 1048576).toFixed(1).replace('.', ',') + ' MB';
+      document.getElementById('thongTin').textContent = t + ' · Windows 10/11 (64-bit)';
+      if (a && a.digest && a.digest.indexOf('sha256:') === 0) {
+        document.getElementById('sha').textContent = a.digest.slice(7).toUpperCase();
+        document.getElementById('dongSha').hidden = false;
+      }
+    })
+    .catch(function () { /* giữ dòng mặc định, nút tải vẫn dùng link bản mới nhất */ });
+})();
+</script>
+</body>
+</html>
