@@ -86,6 +86,15 @@
     .menu{display:none}
   }
   @media (max-width:520px){ .nut{width:100%;justify-content:center} section{padding-block:40px} }
+
+.nhom-zalo{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:10px;padding:11px 20px 11px 13px;border-radius:999px;background:#0068FF;color:#fff;font-weight:700;font-size:15.5px;text-decoration:none;box-shadow:0 10px 24px rgba(0,104,255,.38),0 2px 6px rgba(15,27,61,.18);transform-origin:50% 100%;animation:lay 4.5s ease-in-out 1.2s infinite}
+.nhom-zalo i{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.nhom-zalo:hover{background:#0058DB;animation-play-state:paused}
+.nhom-zalo:focus-visible{outline:3px solid #9CC3FF;outline-offset:3px}
+@keyframes lay{0%,78%,100%{transform:rotate(0) translateY(0)}81%{transform:rotate(-5deg) translateY(-3px)}84%{transform:rotate(5deg) translateY(-3px)}87%{transform:rotate(-4deg) translateY(-2px)}90%{transform:rotate(4deg) translateY(-1px)}94%{transform:rotate(-2deg)}}
+@media (prefers-reduced-motion:reduce){.nhom-zalo{animation:none}}
+@media (max-width:560px){.nhom-zalo{right:14px;bottom:14px;font-size:14.5px;padding:9px 16px 9px 10px}}
+body{padding-bottom:64px}
 </style>
 </head>
 <body>
@@ -96,7 +105,7 @@
       <div><b>TRỢ LÝ QUẢN TRỊ TRƯỜNG HỌC</b><span>Đồng hành cùng nhà trường</span></div>
     </a>
     <nav class="menu"><a href="#cai-dat">Cài đặt</a><a href="#he-thong">Làm trên hệ thống</a><a href="#tinh-nang">Tính năng</a><a href="#hoi-dap">Hỏi đáp</a></nav>
-    <a class="ve" href="https://schoolrecords.github.io/phan-mem-tro-ly-ai/"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Trang chủ</a>
+    <a class="ve" href="https://phanmem.quantrisotruonghoc.com/"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Trang chủ</a>
   </div>
 </div>
 
@@ -128,7 +137,7 @@
         <div class="o"><b>Tải bộ cài</b><p>Bấm "Tải bộ cài đặt". Nếu trình duyệt báo tệp "không thường được tải xuống", chọn <b>Giữ lại</b>.</p></div>
         <div class="o"><b>Mở tệp vừa tải</b><p>Windows có thể hiện màn hình "Windows đã bảo vệ máy tính của bạn".</p><div class="canh">Bấm <kbd>Thông tin bổ sung</kbd> → <kbd>Vẫn chạy</kbd></div></div>
         <div class="o"><b>Chọn nơi lưu dữ liệu</b><p>Nên chọn ổ D hoặc E. Chương trình tự cài vào ổ C; văn bản, bộ nhớ của trợ lý nằm ở ổ thầy cô chọn.</p></div>
-        <div class="o"><b>Kích hoạt, khai báo</b><p>Mở phần mềm, bấm <b>Sao chép</b> cạnh Mã máy, gửi tác giả kèm tên trường để nhận mã kích hoạt; khai báo thông tin trường một lần.</p></div>
+        <div class="o"><b>Kích hoạt, khai báo</b><p>Mở phần mềm, bấm <b>Sao chép</b> cạnh Mã máy, gửi qua <a href="https://zalo.me/0913031073" target="_blank" rel="noopener">Zalo 0913031073</a> kèm tên trường để nhận mã kích hoạt; khai báo thông tin trường một lần.</p></div>
       </div>
       <div class="yeu-cau"><span>Windows 10 (1809+) hoặc 11, 64-bit</span><span>Có Internet</span><span>Tài khoản Claude gói trả phí</span></div>
     </div>
@@ -170,9 +179,9 @@
       <p class="mo-ta">Những điều thầy cô hay hỏi khi cài đặt, cập nhật.</p>
       <details open><summary>Máy đã cài rồi thì cập nhật thế nào?</summary><p>Phần mềm tự kiểm tra bản mới mỗi ngày và hỏi "Cập nhật ngay?"; hoặc vào Cài đặt → Cập nhật phần mềm → Kiểm tra bản mới. Văn bản, bộ nhớ và mã kích hoạt được giữ nguyên.</p></details>
       <details><summary>Tải về rất lâu không xong?</summary><p>Xem biểu tượng tải xuống ở góc trên trình duyệt: nếu có dòng cảnh báo, bấm ⋯ → Giữ lại. Mạng chậm thì nhờ đồng nghiệp đã tải chép tệp cài qua USB; máy đã cài chọn Cài đặt → Cập nhật từ file cài đặt.</p></details>
-      <details><summary>Cài lại Windows hoặc chuyển sang máy mới?</summary><p>Cài phần mềm ở máy mới, chép thư mục dữ liệu (hoặc giải nén bản sao lưu) sang, rồi gửi tác giả Mã máy mới để nhận mã kích hoạt.</p></details>
+      <details><summary>Cài lại Windows hoặc chuyển sang máy mới?</summary><p>Cài phần mềm ở máy mới, chép thư mục dữ liệu (hoặc giải nén bản sao lưu) sang, rồi gửi Mã máy mới qua <a href="https://zalo.me/0913031073" target="_blank" rel="noopener">Zalo 0913031073</a> để nhận mã kích hoạt.</p></details>
       <details><summary>Dữ liệu của trường có bị đưa lên mạng không?</summary><p>Văn bản, bộ nhớ nằm trên máy thầy cô. Nội dung giao việc được gửi đến máy chủ của Anthropic để trợ lý xử lý - không đưa số căn cước, tài liệu mật vào trò chuyện.</p></details>
-      <p class="mo-ta" style="margin-top:18px">Các bản đã phát hành: <a href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases">danh sách phiên bản</a><span id="dongSha" hidden> · Mã kiểm tra SHA-256 bản hiện tại: <code id="sha" style="word-break:break-all"></code></span></p>
+      <p class="mo-ta" style="margin-top:18px">Các bản đã phát hành: <a href="https://github.com/Schoolrecords/tro-ly-quan-tri-truong-hoc/releases">danh sách phiên bản</a></p>
     </div>
   </section>
 </main>
@@ -180,7 +189,7 @@
 <footer>
   <div class="khung">
     <span>© 2026 Trần Thanh Chung · Trợ lý Quản trị trường học</span>
-    <span>Hỗ trợ, cấp mã kích hoạt: <a href="mailto:chungtrt@gmail.com">chungtrt@gmail.com</a></span>
+    <span>Hỗ trợ kích hoạt: <a href="https://zalo.me/0913031073" target="_blank" rel="noopener">Zalo 0913031073</a> · <a href="https://zalo.me/g/bsbbney6zowhzolz9mss" target="_blank" rel="noopener">Nhóm Tư vấn và hỗ trợ</a></span>
   </div>
 </footer>
 
@@ -196,13 +205,10 @@
       var t = 'Phiên bản ' + ver + ' · phát hành ' + ngay(rel.published_at);
       if (a) t += ' · ' + (a.size / 1048576).toFixed(1).replace('.', ',') + ' MB';
       document.getElementById('thongTin').textContent = t + ' · Windows 10/11 (64-bit)';
-      if (a && a.digest && a.digest.indexOf('sha256:') === 0) {
-        document.getElementById('sha').textContent = a.digest.slice(7).toUpperCase();
-        document.getElementById('dongSha').hidden = false;
-      }
     })
     .catch(function () { /* giữ dòng mặc định; nút tải vẫn dùng link bản mới nhất */ });
 })();
 </script>
+<a class="nhom-zalo" href="https://zalo.me/g/bsbbney6zowhzolz9mss" target="_blank" rel="noopener" aria-label="Vào nhóm Zalo tư vấn và hỗ trợ"><i><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-5 0-9 3.4-9 7.6 0 2.4 1.3 4.5 3.4 5.9-.1 1-.5 2.1-1.3 3 1.7-.1 3.2-.7 4.3-1.6.8.2 1.7.3 2.6.3 5 0 9-3.4 9-7.6s-4-7.6-9-7.6z" fill="#0068FF"/><circle cx="8.3" cy="11.2" r="1.15" fill="#fff"/><circle cx="12" cy="11.2" r="1.15" fill="#fff"/><circle cx="15.7" cy="11.2" r="1.15" fill="#fff"/></svg></i>Nhóm Zalo hỗ trợ</a>
 </body>
 </html>
